@@ -3,6 +3,7 @@ import{sendMessage} from "../controller/message.controller.js"
 
 const router = express.Router();
 
+
 router.post("/send",sendMessage);
 
 
