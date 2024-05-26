@@ -30,7 +30,7 @@ if(err.name=='CastError'){
 }
 
 
-const errorMessage=err.message?Object.values(err.errors).map(error=>error.message).join(" "):err.message
+const errorMessage=err.errors?Object.values(err.errors).map(error=>error.message).join(" "):err.message
 return resp.status(err.statusCode).json({
     success:false,
     message:errorMessage
