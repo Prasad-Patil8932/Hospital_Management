@@ -129,5 +129,13 @@ export const login= catchAsyncErrors(async(req,resp,next)=>{
       doctors
     })
   })
+
+  export const getUserDetails=catchAsyncErrors(async(req,resp,next)=>{
+    const user = req.user;
+    resp.status(200).json({
+      success:true,
+      user
+    })
+  })
   
 
