@@ -122,6 +122,12 @@ export const login= catchAsyncErrors(async(req,resp,next)=>{
   });
   
 
-  // generateToken(admin,"New Admin Add Successfully",200,resp)
+  export const getAllDoctors=catchAsyncErrors(async(req,resp,next)=>{
+    const doctors=await User.find({role:"Doctor"})
+    resp.status(200).json({
+      success:true,
+      doctors
+    })
+  })
   
 
