@@ -139,3 +139,13 @@ export const login= catchAsyncErrors(async(req,resp,next)=>{
   })
   
 
+  export const logoutAdmin=catchAsyncErrors(async(req,resp,next)=>{
+    resp.status(200).cookie("adminToken","",{
+      httpOnly:true,
+      expires: new Date(Date.now())
+    }).json({
+      success:true,
+      message:"User Log Out Successfully"
+    })
+  })
+
